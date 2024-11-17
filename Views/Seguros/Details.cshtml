@@ -1,0 +1,54 @@
+﻿@model GestionVehiculos.Models.Seguro
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Seguro</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Cobertertura)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Cobertertura)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Proveedor)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Proveedor)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FechaInicio)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FechaInicio)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FechaVencimiento)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FechaVencimiento)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Costo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Costo)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.vehiculo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.vehiculo.Marca)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

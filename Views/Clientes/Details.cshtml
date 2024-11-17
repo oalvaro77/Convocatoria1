@@ -1,0 +1,77 @@
+﻿@model GestionVehiculos.Models.Cliente
+
+@{
+    ViewData["Title"] = "Detalles del Cliente";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div>
+    <h4>Cliente</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Documento)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Documento)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Contacto)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Contacto)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Direccion)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Direccion)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TipoCliente)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TipoCliente)
+        </dd>
+    </dl>
+</div>
+
+<div>
+    <h4>Vehículos</h4>
+    <hr />
+    @if (Model.Vehiculos != null && Model.Vehiculos.Any())
+    {
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Modelo</th>
+                    <th>Marca</th>
+                    <th>Placa</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var vehiculo in Model.Vehiculos)
+                {
+                    <tr>
+                        <td>@vehiculo.Modelo</td>
+                        <td>@vehiculo.Marca</td>
+                        <td>@vehiculo.Placa</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>No hay vehículos registrados para este cliente.</p>
+    }
+</div>
+
+<a href="@Url.Action("Index", "Clientes")" class="btn btn-secondary">Volver a la lista de clientes</a>

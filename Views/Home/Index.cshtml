@@ -1,0 +1,76 @@
+﻿@{
+    ViewData["Title"] = "Página de Inicio";
+}
+
+<div class="container mt-5">
+    <header class="text-center mb-5">
+        <h1 class="display-4">Bienvenido a Gestión de Vehículos</h1>
+        <p class="lead">Sistema integral para la administración de vehículos, clientes, mantenimientos y seguros.</p>
+    </header>
+
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+        <!-- Sección Clientes -->
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h2 class="card-title">Clientes</h2>
+                    <p class="card-text">Administra los clientes registrados en el sistema. Añade, edita y visualiza información de los clientes.</p>
+                </div>
+                <div class="card-footer">
+                    <a href="/Clientes" class="btn btn-primary w-100">
+                        <i class="bi bi-people me-2"></i>Ir a Clientes
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección Vehículos -->
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h2 class="card-title">Vehículos</h2>
+                    <p class="card-text">Administra los vehículos registrados en el sistema. Gestiona información detallada de cada vehículo.</p>
+                </div>
+                <div class="card-footer">
+                    <a href="/Vehiculos" class="btn btn-success w-100">
+                        <i class="bi bi-truck me-2"></i>Ir a Vehículos
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección Mantenimientos -->
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h2 class="card-title">Mantenimientos</h2>
+                    <p class="card-text">Administra el historial de mantenimientos. Registra y consulta servicios realizados a los vehículos.</p>
+                </div>
+                <div class="card-footer">
+                    <a href="/Mantenimientos" class="btn btn-warning w-100">
+                        <i class="bi bi-tools me-2"></i>Ir a Mantenimientos
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección Seguros -->
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h2 class="card-title">Seguros</h2>
+                    <p class="card-text">Administra las pólizas de seguro asociadas a los vehículos. Gestiona coberturas y vencimientos.</p>
+                </div>
+                <div class="card-footer">
+                    <a href="/Seguros" class="btn btn-danger w-100">
+                        <i class="bi bi-shield-check me-2"></i>Ir a Seguros
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="mt-5 text-center">
+        <p>Aprende más sobre <a href="https://learn.microsoft.com/aspnet/core" target="_blank" rel="noopener noreferrer">cómo construir aplicaciones web con ASP.NET Core</a>.</p>
+    </footer>
+</div>

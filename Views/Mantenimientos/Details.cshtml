@@ -1,0 +1,65 @@
+﻿@model GestionVehiculos.Models.Mantenimiento
+@using System.Globalization
+
+@{
+    ViewData["Title"] = "Detalles de Mantenimiento";
+    var culture = new CultureInfo("es-ES");
+}
+
+<div class="min-h-screen bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mx-auto">
+        <div class="bg-white shadow-xl rounded-lg overflow-hidden">
+            <div class="bg-gradient-to-r from-blue-500 to-blue-600 px-6 py-4">
+                <h1 class="text-2xl font-bold text-white">Detalles de Mantenimiento</h1>
+            </div>
+            <div class="p-6">
+                <div class="flex items-center justify-between mb-6">
+                    <h2 class="text-3xl font-semibold text-gray-800">@Model.Vehiculo.Marca @Model.Vehiculo.Modelo</h2>
+                    <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">
+                        @Model.Fecha.ToString("d MMMM yyyy", culture)
+                    </span>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div class="bg-gray-50 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow duration-300">
+                        <p class="text-sm font-medium text-gray-500 mb-1">Costo</p>
+                        <p class="text-2xl font-bold text-gray-800">@Model.Costo.ToString("C", culture)</p>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow duration-300">
+                        <p class="text-sm font-medium text-gray-500 mb-1">Proveedor</p>
+                        <p class="text-2xl font-bold text-gray-800">@Model.Proveedor</p>
+                    </div>
+                </div>
+                <div class="bg-gray-50 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow duration-300 mb-6">
+                    <p class="text-sm font-medium text-gray-500 mb-2">Descripción</p>
+                    <p class="text-gray-800 leading-relaxed">@Model.Descripcion</p>
+                </div>
+                <div class="flex flex-col sm:flex-row sm:justify-between items-center gap-4">
+                    <button onclick="location.href='@Url.Action("Edit", new { id = Model.Id })'" class="w-full sm:w-auto px-6 py-3 text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors duration-300">
+                        Editar
+                    </button>
+                    <button onclick="location.href='@Url.Action("Index")'" class="w-full sm:w-auto px-6 py-3 text-base font-medium rounded-md text-gray-700 bg-white border border-gray-300 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors duration-300">
+                        Volver a la Lista
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <!--<script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const cells = document.querySelectorAll('.bg-gray-50');
+            cells.forEach(cell => {
+                cell.addEventListener('mouseenter', () => {
+                    cell.classList.add('scale-105', 'shadow-md');
+                    cell.classList.remove('shadow-sm');
+                });
+                cell.addEventListener('mouseleave', () => {
+                    cell.classList.remove('scale-105', 'shadow-md');
+                    cell.classList.add('shadow-sm');
+                });
+            });
+        });
+    </script>-->
+}
